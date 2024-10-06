@@ -285,7 +285,7 @@ void SystemClock_Config( void )
   /**
    * Select wakeup source of BLE RF
    */
-  LL_RCC_SetRFWKPClockSource(LL_RCC_RFWKP_CLKSOURCE_LSE);
+  LL_RCC_SetRFWKPClockSource(LL_RCC_RFWKP_CLKSOURCE_HSE_DIV1024);
   
   /* USER CODE BEGIN Smps */
 
