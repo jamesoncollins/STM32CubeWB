@@ -64,20 +64,20 @@ void APPE_Init( void )
 
   HW_TS_Init(hw_ts_InitMode_Full, &hrtc); /**< Initialize the TimerServer */
 
-  //APPD_Init( );
+  APPD_Init( );
 
   /**
    * The Standby mode should not be entered before the initialization is over
    * The default state of the Low Power Manager is to allow the Standby Mode so an request is needed here
    */
-  //UTIL_LPM_SetOffMode(1 << CFG_LPM_APP, UTIL_LPM_DISABLE);
+  UTIL_LPM_SetOffMode(1 << CFG_LPM_APP, UTIL_LPM_DISABLE);
 
-  //Led_Init();
+  Led_Init();
 
-  //Button_Init();
+  Button_Init();
   
   /* clock enable periph CRC */
-  //LL_C2_AHB1_GRP1_EnableClock(LL_C2_AHB1_GRP1_PERIPH_CRC);
+  LL_C2_AHB1_GRP1_EnableClock(LL_C2_AHB1_GRP1_PERIPH_CRC);
 
   appe_Tl_Init();	/**< Initialize all transport layers */
 
